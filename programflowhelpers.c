@@ -144,11 +144,11 @@ int _forkprocess(char **av, char *buffer, char *fullpathbuffer)
 		result =  execve(fullpathbuffer, av, NULL);
 		if (result == -1)
 		{
+			perror(av[0]);
 			for (i = 0; av[i]; i++)
 				free(av[i]);
 			free(av);
 			free(buffer);
-			perror("Error");
 			exit(1);
 		}
 	}
