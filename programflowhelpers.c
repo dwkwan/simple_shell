@@ -128,7 +128,7 @@ int checkbuiltins(char **av, char *buffer)
  *
  * Return: 0 on success
  */
-int _forkprocess(char **av, char *buffer, __attribute__ ((unused))char *fullpathbuffer)
+int _forkprocess(char **av, char *buffer, char *fullpathbuffer)
 {
 	int i, status, result;
 	pid_t pid;
@@ -136,12 +136,12 @@ int _forkprocess(char **av, char *buffer, __attribute__ ((unused))char *fullpath
 	pid = fork();
 	if (pid == -1)
 	{
-		perror("Error:");
+		perror("Error");
 		exit(1);
 	}
 	if (pid == 0)
 	{
-		result =  execve(/* fullpathbuffer */av[0], av/*av*/, NULL);
+		result =  execve(fullpathbuffer, av, environ);
 		if (result == -1)
 		{
 			perror(av[0]);

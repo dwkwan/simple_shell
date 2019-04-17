@@ -21,7 +21,7 @@ char **tokenize(char *buffer)
 	token = strtok(buffer, delimiter);
 	while (token != NULL)
 	{
-		av[i] = strdup(token);
+		av[i] = _strdup(token);
 		token = strtok(NULL, delimiter);
 		i++;
 	}
