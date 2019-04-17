@@ -6,7 +6,7 @@
  */
 int main(void)
 {
-	char *fullpathbuffer = NULL, *copy = NULL, *buffer = NULL;
+	char *fullpathbuffer = NULL, /**copy = NULL,*/ *buffer = NULL;
 	char *PATH = NULL;
 	char **av;
 
@@ -26,9 +26,9 @@ int main(void)
 				free(buffer);
 				continue;
 			}
-			fullpathbuffer = _fullpathbuffer(av, PATH, copy);
+			/* fullpathbuffer = _fullpathbuffer(av, PATH, copy);
 			if (checkbuiltins(av, buffer) == 1)
-				continue;
+			continue; */
 			_forkprocess(av, buffer, fullpathbuffer);
 		}
 		else
