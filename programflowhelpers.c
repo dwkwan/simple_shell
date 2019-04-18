@@ -22,7 +22,7 @@ int prompt(void)
  *
  * Return: a pointer to the buffer
  */
-char *_read(void)
+char *_read(int exitstatus)
 {
 	ssize_t readcount = 0;
 	size_t n = 0;
@@ -34,7 +34,7 @@ char *_read(void)
 		free(buffer);
 		if (isatty(STDIN_FILENO) != 0)
 			write(STDOUT_FILENO, "\n", 1);
-		exit(0);
+		exit(exitstatus);
 	}
 	if (buffer[readcount - 1] == '\n' || buffer[readcount - 1] == '\t')
 		buffer[readcount - 1] = '\0';
