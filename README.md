@@ -4,6 +4,7 @@ This is a UNIX command line interpreter based on the simple shell(sh). It reads 
 ## Getting Started
 Clone this repository. Compile with GCC and use the following flags:
 gcc -Wall -Werror -Wextra -pedantic
+
 Returns: 0 upon success or exit status upon error
 ## Usage
 After compiling the program, you may use it in both interactive and non-interactive mode.
@@ -32,6 +33,7 @@ total 0
 ```sh
 $ pwd
 /home/vagrant/shelltesting
+```
 - `fakefile` *prints error because "fakefile" does not exist*
 ```sh
 $ fakefile *fakefile: No such file or directory*
