@@ -31,7 +31,7 @@ total 0
 ```
 - `pwd` *prints the working directory*
 ```sh
-$  pwd
+$ pwd
 /home/vagrant/shelltesting
 ```
 - `fakefile` *prints error because "fakefile" does not exist*
