@@ -19,7 +19,7 @@ extern char **environ;
 /* Program Flow */
 
 int prompt(void);
-char *_read(int exitstatus);
+char *_read(void);
 char *_fullpathbuffer(char **av, char *PATH, char *copy);
 int checkbuiltins(char **av, char *buffer, int exitstatus);
 int _forkprocess(char **av, char *buffer, char *fullpathbuffer);

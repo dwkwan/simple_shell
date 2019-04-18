@@ -18,7 +18,7 @@ int main(void)
 	{
 		av = NULL;
 		prompt();
-		buffer = _read(exitstatus);
+		buffer = _read();
 		if (*buffer != '\0')
 		{
 			av = tokenize(buffer);

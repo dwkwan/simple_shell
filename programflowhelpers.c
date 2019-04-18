@@ -19,11 +19,10 @@ int prompt(void)
 }
 /**
  * _read - reads stdin and stores it in a buffer
- * @exitstatus: exit status of execve
  *
  * Return: a pointer to the buffer
  */
-char *_read(int exitstatus)
+char *_read(void)
 {
 	ssize_t readcount = 0;
 	size_t n = 0;
@@ -35,7 +34,7 @@ char *_read(int exitstatus)
 		free(buffer);
 		if (isatty(STDIN_FILENO) != 0)
 			write(STDOUT_FILENO, "\n", 1);
-		exit(exitstatus);
+		exit(0);
 	}
 	if (buffer[readcount - 1] == '\n' || buffer[readcount - 1] == '\t')
 		buffer[readcount - 1] = '\0';
