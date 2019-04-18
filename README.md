@@ -36,7 +36,8 @@ $ pwd
 ```
 - `fakefile` *prints error because "fakefile" does not exist*
 ```sh
-$ fakefile *fakefile: No such file or directory*
+$ fakefile
+fakefile: No such file or directory
 ```
 ### Files
 File Name | Description
