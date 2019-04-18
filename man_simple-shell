@@ -17,8 +17,7 @@ If the standard input is used with a pipeline operator, |, to connect the comman
 .SH LEXICAL STRUCTURE
 The shell reads input in terms of lines from a file and breaks it up into words at whitespace (blanks and tabs).
 .SH RETURN
-Upon success, 
-.SH EXIT STATUS
+Upon successful return, the shell will always return a 0 for success. If the shell program fails when a command is entered incorrectly or does not exist in the $PATH, then shell program will exit out of the child process and display an error message corresponding to the error the user committed and return with a prompt.
 .SH BUILT-INS
 .PP
 env - When entered, shell prints the current environment to standard output.
