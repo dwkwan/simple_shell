@@ -9,6 +9,7 @@ int main(void)
 	char *fullpathbuffer = NULL, *copy = NULL, *buffer = NULL;
 	char *PATH = NULL;
 	char **av;
+	int exitstatus = 0;
 
 	PATH = _getenv("PATH");
 	if (PATH == NULL)
@@ -27,9 +28,9 @@ int main(void)
 				continue;
 			}
 			fullpathbuffer = _fullpathbuffer(av, PATH, copy);
-			if (checkbuiltins(av, buffer) == 1)
+			if (checkbuiltins(av, buffer, exitstatus) == 1)
 				continue;
-			_forkprocess(av, buffer, fullpathbuffer);
+			exitstatus = _forkprocess(av, buffer, fullpathbuffer);
 		}
 		else
 			free(buffer);

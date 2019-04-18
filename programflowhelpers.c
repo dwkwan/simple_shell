@@ -93,10 +93,10 @@ char *_fullpathbuffer(char **av, char *PATH, char *copy)
  * checkbuiltins - check if first user string is a built-in
  * @av: pointer to array of user of strings
  * @buffer: pointer to user string
- *
+ * @exitstatus: exit status of execve
  * Return: 1 if user string is equal to env or 0 otherwise
  */
-int checkbuiltins(char **av, char *buffer)
+int checkbuiltins(char **av, char *buffer, int exitstatus)
 {
 	int i;
 
@@ -115,7 +115,7 @@ int checkbuiltins(char **av, char *buffer)
 			free(av[i]);
 		free(av);
 		free(buffer);
-		exit(0);
+		exit(exitstatus);
 	}
 	else
 		return (0);
@@ -130,7 +130,7 @@ int checkbuiltins(char **av, char *buffer)
  */
 int _forkprocess(char **av, char *buffer, char *fullpathbuffer)
 {
-	int i, status, result;
+	int i, status, result, exitstatus = 0;
 	pid_t pid;
 
 	pid = fork();
@@ -149,13 +149,17 @@ int _forkprocess(char **av, char *buffer, char *fullpathbuffer)
 				free(av[i]);
 			free(av);
 			free(buffer);
-			exit(1);
+			exit(127);
 		}
 	}
 	wait(&status);
+	if (WIFEXITED(status))
+	{
+		exitstatus = WEXITSTATUS(status);
+	}
 	for (i = 0; av[i]; i++)
 		free(av[i]);
 	free(av);
 	free(buffer);
-	return (0);
+	return (exitstatus);
 }
