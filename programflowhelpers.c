@@ -19,6 +19,7 @@ int prompt(void)
 }
 /**
  * _read - reads stdin and stores it in a buffer
+ * @exitstatus: exit status of execve
  *
  * Return: a pointer to the buffer
  */
