@@ -11,6 +11,7 @@ int main(void)
 	char **av;
 	int exitstatus = 0;
 
+	signal(SIGINT, SIG_IGN);
 	PATH = _getenv("PATH");
 	if (PATH == NULL)
 		return (-1);
