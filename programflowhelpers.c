@@ -41,7 +41,7 @@ char *_read(void)
 		buffer[readcount - 1] = '\0';
 	for (i = 0; buffer[i]; i++)
 	{
-		if (buffer[i] == '#')
+		if (buffer[i] == '#' && buffer[i -1] == ' ')
 		{
 			buffer[i] = '\0';
 			break;
