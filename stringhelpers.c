@@ -1,3 +1,4 @@
+
 #include "holberton.h"
 /**
  * _strdup - duplicates a string
@@ -32,9 +33,7 @@ char *_strdup(char *str)
  */
 int _splitstring(char *str)
 {
-	int i;
-	int searchflag = 1;
-	int wordcount = 0;
+	int i, searchflag = 1, wordcount = 0;
 
 	for (i = 0; str[i]; i++)
 	{
