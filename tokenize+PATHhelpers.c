@@ -10,7 +10,7 @@ char **tokenize(char *buffer)
 	char *token = NULL;
 	int i = 0, wordcount = 0;
 	char *delimiter = " \n";
-	char **av;
+	char **av = NULL;
 
 	wordcount = _splitstring(buffer);
 	if (!wordcount)
