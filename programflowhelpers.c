@@ -51,7 +51,7 @@ char *_read(void)
 }
 /**
  * _fullpathbuffer - finds the string to call execve on
- * @av: pointer to array of user of strings
+ * @av: pointer to array of user strings
  * @PATH: pointer to PATH string
  * @copy: pointer to copy of PATH string
  *
