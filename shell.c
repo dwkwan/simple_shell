@@ -8,7 +8,7 @@ int main(void)
 {
 	char *fullpathbuffer = NULL, *copy = NULL, *buffer = NULL;
 	char *PATH = NULL;
-	char **av;
+	char **av = NULL;
 	int exitstatus = 0;
 
 	signal(SIGINT, SIG_IGN);
@@ -29,7 +29,7 @@ int main(void)
 				continue;
 			}
 			fullpathbuffer = _fullpathbuffer(av, PATH, copy);
-			if (checkbuiltins(av, buffer, exitstatus) == 1)
+			if (checkbuiltins(av, buffer, exitstatus) != 0)
 				continue;
 			exitstatus = _forkprocess(av, buffer, fullpathbuffer);
 		}
