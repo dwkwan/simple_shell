@@ -36,9 +36,7 @@ char **tokenize(char *buffer)
  */
 int _splitPATH(char *str)
 {
-	int i;
-	int searchflag = 1;
-	int wordcount = 0;
+	int i, searchflag = 1, wordcount = 0;
 
 	for (i = 0; str[i]; i++)
 	{
