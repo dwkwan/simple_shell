@@ -59,7 +59,7 @@ char *_read(void)
  */
 char *_fullpathbuffer(char **av, char *PATH, char *copy)
 {
-	char *tok, *fullpathbuffer = NULL, *concatstr = NULL;
+	char *tok = NULL, *fullpathbuffer = NULL, *concatstr = NULL;
 	static char tmp[256];
 	int PATHcount = 0, fullpathflag = 0, /*len = 0,*/ z = 0, toklen = 0;
 	struct stat h;
