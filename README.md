@@ -1,4 +1,7 @@
 # Simple_Shell
+
+# ![Logo](https://imgur.com/mzxG93i.png) 
+
 ## Overview
 This is a UNIX command line interpreter based on the simple shell(sh). It reads user input from the command line, interprets it, and executes commands.
 ## Getting Started
